@@ -17,6 +17,7 @@ class VideoStream {
         this.imageH = imageHeight;
         this.context2d.width = this.imageW;
         this.context2d.height = this.imageH;
+        this.model = new CoreModel();
     }
 
     static getUserMedia(constraints, success, error) {
@@ -93,11 +94,5 @@ var vs = new VideoStream(video1, canvas.getContext('2d'), 40, 40);
 vs.start();
 vs.startProcess();
 
-// var videoStream = new VideoStream(video);
-// videoStream.start();
 
 
-// TODO：这个设置为interval
-// document.getElementById('capture').addEventListener('click', function () {
-//     context.drawImage(video, 0, 0, 480, 320);
-// })

@@ -8,20 +8,23 @@
 
 
 <!--摄像头组件-->
-<div id="camera">
-    <video id="video" width="480" height="320" controls>
+<div id="camera" style="width: 100vw;height: 18vh;">
+    <video id="video" >
   </video>
     <canvas id="canvas" width="480" height="320"></canvas>
+    <canvas id="canvasForNNInput" width="480" height="320"></canvas>
 </div>
+<div id="plot" style="width: 100vw;height: 50vh;"></div>
 <!--mui框架-->
 <script src="libs/mui.js"></script>
 <!--tfjs组件-->
 <!--<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>-->
 <!--<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>-->
-<!--下载的tfjs，将版本固定-->
+<!--下载的tfjs，将版本固定，避免后续版本不兼容-->
 <script src="libs/tfjs.js"></script>
 <script src="libs/tfjs_converter.js"></script>
-
+<!--绘制条形图用echarts-->
+<script src="libs/echarts.min.js"></script>
 <!--模型组件-->
 <script src="js/aiCore.js"></script>
 <!--主函数-->

@@ -1,6 +1,10 @@
-# develAIApp
+# mnistAppDemo
 - 从零开始开发一款手写数字识别的app，作为AI app开发的demo
+- 开发总耗时：9个小时
+- 效果展示  
+![](./result.gif)
 
+- 实际上手写数字识别并不适合使用摄像头作为进行识别的图像，因为受到光照的影响很大，但对于其他以图像识别为主的app，代码大同小异
 ## 可参考内容
 - [https://github.com/tensorflow/tfjs-examples](https://github.com/tensorflow/tfjs-examples)，可以尝试把这里面的demo改成手机app
 - [https://www.w3cschool.cn/tensorflowjs/](https://www.w3cschool.cn/tensorflowjs/)

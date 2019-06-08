@@ -17,12 +17,16 @@
  
 # 开发步骤：离线方案
 大部分文档可见代码注释
-## js部分
+## js部分(推荐windows上开发)
 1. 完成摄像头图像流获取和显示
-2. 间隔一段时间截取图像，按照手写识别模型输入预处理，然后使用tensorflowJs传入模型预测，展示输出
-## python部分
-强烈建议在linux环境下完成模型训练和导出操作  
+2. 间隔一段时间截取图像，按照python中对于mnist的预处理进行,包括归一化,灰度,reshape等
+3. tensorflowJs载入python训练过后存储并导出的模型,步骤2的预处理后的图像作为输入进行模型预测，展示输出
+## python部分(推荐linux上开发)
+只测试在linux环境下使用python3.7+tf,tfjs模块完成模型训练和导出操作,windows下未测试(因需要tf-nightly)  
 - 可以参考[https://www.w3cschool.cn/tensorflowjs/tensorflowjs-uc9p2q2m.html](https://www.w3cschool.cn/tensorflowjs/tensorflowjs-uc9p2q2m.html)来训练模型，保存到Tensorflow.js中然后js使用
 - 目前暂时只训练手写数字识别
+1. 先正常训练模型
+2. 使用keras存储模型到.h5文件
+3. 使用tensorflowjs_converter转换(2,3步可以通过导入tensorflowjs来直接一步到位)
 ### debug
-- pip安装tensorflowjs时报错找不到相应版本的tf-nightly：先pip install tf-nightly，
+- bug: cannot import name 'convert_to_constants' from 'tensorflow.python.framework',解决方法:pip instlal tf-nightly 

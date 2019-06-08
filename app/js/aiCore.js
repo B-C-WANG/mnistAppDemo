@@ -5,10 +5,15 @@ class CoreModel {
 
     }
 
+    save_local_model_files_to_localStorage(){
+        // TODO
+    }
+
     async loadModel() {
-        this.model = await tf.loadFrozenModel(
-            "C:\\github\\develAIApp\\python\\tfjs_models\\model.json",
-            "C:\\github\\develAIApp\\python\\tfjs_models\\group1-shard1of1.bin")
+
+        this.model = await tf.loadLayersModel(
+            // 临时方案，因为网页端运行时会在创建本地server
+            'http://127.0.0.1:8848/app/python/tfjs_models/model.json')
 
 
     }
